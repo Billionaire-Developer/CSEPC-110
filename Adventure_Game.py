@@ -1,29 +1,62 @@
 #I included a dictionary scenarios to store the scenario and choices.
 #I've added a design for the complete game, including all possible prompts, choices, and responses.
 
-
 print("Welcome to the Adventure Game!")
-choice1 = input("You are standing in a dark forest. Do you want to pick up the MATCH or the FLASHLIGHT? ")
-if choice1.lower() == "match":
-    print("You pick up the match and strike it, and for an instant, the forest around you is illuminated. You see a large grizzly bear, and then the match burns out. Do you want to RUN, or HIDE behind a tree? ")
-choice2 = input()
-if choice2.lower == "run":
-    print("You try to run, but the bear is too fast. You are eaten alive. Game over.")
-elif choice2.lower() == "hide":
-    print("You hide behind a tree, and bear passes by without noticing you. You are safe for now. Do you want to FOLLOW the path or LOOK for a safe place to rest? ")
-    choice3 = input()
-    if choice3.lower == "follow":
-        print("You follow the path and came across a clearing. In the center of the clearing is a cottage. Do you want to KNOCK on the door or FO AROUND BACK? ")
-    elif choice3.lower == "look":
-        print("You look around and find small cave. You enter the cave and fine a treasure chest. Congratulations, you won! ")
+#Choice 1
+answer = input ('You are at the crossroad, would you like to go LEFT, RIGHT or FORWARD? ')
+if answer.upper() == 'LEFT':
+    answer = input ('You encounter a monster, would you like to RUN or ATTACK?')
+    if answer.upper() == 'ATTACK':
+        answer = input('The monster is armed, do you need a KNIFE or GUN?')
+        if answer.upper() == 'KNIFE':
+            print("That was not the best idea, sorry you lost!")
+        elif answer.upper() == 'GUN':
+            print('Aha! brilliant idea, you have killed the monster, you won!')
+        else:
+            print('please exit!')
+    elif answer.upper() == 'RUN':
+        answer = input('why choose RUN? Are you not brave enough? Do you wish to CONTINUE or ABORT mission?')
+        if answer.upper() == 'CONTINUE':
+            answer = input('Nice one! I commend your bravery. Do you want to choose an ARROW or a DAGGER?')
+            if answer.upper() == 'ARROW':
+                print('Good choice! you have killed the monster. You won!')
+            elif answer.upper() == 'DAGGER':
+                print('Oh no! the monster has killed you. You lost!')
+            else:
+                print('You option is invalid')
+        elif answer.upper() == 'ABORT':
+            print('poor coward, you lost the game')  
+        else:
+            print('No other option left, please exit')
     else:
-        print("Invalid choice, Game Over!")
-elif choice1.lower() == "flashlight":
-    print("You pick up the flashlight and turn it on. You see the pathway lit up in front of you, but you thought you also heard something off to the side. Do you want to FOLLOW the path or LOOK in the trees for the thing that made the noise? ")
-    choice2 = input()
-    if choice2.lower() == "follow":
-        print("you follow the path and come across a river. Do you want to SWIM across or LOOK for a boat? ")
-    elif choice2.lower() == "look":
-        print("you look in the trees and see a figure hiding. it's a friendly ranger who offers to guide you through the forest. Do you want to ACCEPT tHeir offer or DECLINE? ")
+            print('invalid option, please exit!')
+            
+#Choice 2
+            
+elif answer.upper() == 'RIGHT':
+    answer = input('There is a goul-like creature, do you wish to FIGHT or FLEE')
+    if answer.upper() == 'FIGHT':
+        print('You are so brave! you have killed the goul with the knife you found by your side. congrats!')
+    elif answer.upper() == 'FLEE':
+        answer = input('why so scared? It is just a game! Do you still want to PLAY or EXIT?')
+        if answer.upper() == 'PLAY':
+            print('Nice choice! you have a gun! kill the goul!')
+            print('Congrats! You have killed it')
+        elif answer.upper() == 'EXIT':
+            print('sorry coward! try again next time')
+        else:
+            print('please try again later Thanks!')
     else:
-        print("Invalid choice. Game over!")
+            print('please enter a valid option!')          
+#Choice 3
+            
+elif answer.upper() == 'FORWARD':
+    answer = input('This option is boring, do you wish to PROCEED or QUIT?')
+    if answer.upper() == 'PROCEED':
+        print('It is a lonely path, you are alone in this journey! Mission failed! Try another option')
+    elif answer.upper() == 'QUIT':
+        answer = input('Okay! Do have a lovely day')
+    else:
+        print('please leave the game now!')
+else:
+        print('This is tii bad, Game over!')
