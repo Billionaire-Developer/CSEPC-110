@@ -51,6 +51,6 @@ while option != 5 and option != "Quit":
         
     option = int(input("\nPlease enter an action: "))
 else:
-    print("\nThank you. Goodbye.")
+    print("\nGoodbye!")
         
     

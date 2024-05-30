@@ -14,7 +14,7 @@ else:
     letter = "F"
 
 #print the letter grade
-print("Your grade is:", letter)
+print("Your grade is", letter)
 
 #Determine if the user passed the course
 if grade_percentage >= 70:
