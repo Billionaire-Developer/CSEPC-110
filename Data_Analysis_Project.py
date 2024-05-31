@@ -11,10 +11,13 @@ spec_min_country = ''
 spec_max_age = 0
 spec_max_country = ''
 
+country_count = 0
+current_country = ''
+
 
 selected_year = int(input("Please, enter the year of interest: ").strip())
 
-with open("life-expectancy.csv") as le:
+with open('life-expectancy.csv') as le:
     for i, line in enumerate(le):
         if i == 0:
             continue
@@ -44,6 +47,10 @@ with open("life-expectancy.csv") as le:
                         if age > spec_max_age:
                             spec_max_age = age
                             spec_max_country = country
+                            
+                            if current_country != country:
+                                country_count += 1
+                                current_country = country
                             
                             spec_avg = sum(age_list) / len(age_list)
                             print(f'\nThe overall max life expectancy is: {maximum} from {maximum_country} in {maximum_year}')
